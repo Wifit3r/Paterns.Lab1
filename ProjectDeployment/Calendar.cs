@@ -24,14 +24,6 @@ namespace ProjectDeployment
         {
             actions.Add(act);
         }
-        public void AddAction(Meet act)
-        {
-            this.actions.Add(act);
-        }
-        public void AddAction(BirthDay act)
-        {
-            actions.Add(act);
-        }
         public void showActions() {
             {
                 foreach (Action act in actions)
@@ -40,24 +32,23 @@ namespace ProjectDeployment
                 }
             }
         }
-        public Meet copyAction(Meet copyMeet)
+        public Action copyAction(Action toCopy)
         {
-            string st = copyMeet.StartTime;
-            string et = copyMeet.EndTime;
-            string dat = copyMeet.Date;
-            string desc = copyMeet.Description;
-            List<User> us = copyMeet.UsersList;
-            Meet copy = new Meet(st,et,dat,desc,us);
-            return copy;
+            Action act = toCopy;
+            act.ActCopy(toCopy);
+            return act;
         }
-        public BirthDay copyAction(BirthDay copyBirthDay)
+        public Meet copyAction(Meet toCopy)
         {
-            User peop = copyBirthDay.man;
-            string dat = copyBirthDay.Date;
-            string desc = copyBirthDay.Description;
-            List<User> us= copyBirthDay.UsersList;
-            BirthDay copy = new BirthDay(peop, dat, desc, us);
-            return copy;
+            Meet meet = toCopy;
+            Meet toReturn = meet.ActCopy(toCopy);
+            return toReturn;
+        }
+        public BirthDay copyAction(BirthDay toCopy)
+        {
+            BirthDay birthDay = toCopy;
+            BirthDay toReturn = birthDay.ActCopy(toCopy);
+            return toReturn;
         }
         
     }
