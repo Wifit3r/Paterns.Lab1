@@ -14,18 +14,13 @@ namespace ProjectDeployment
         public BirthDay(User man, string date, string description, List<User> users):base(date,description,users)
         {
             this.man = man;
-            Date = Date;
+            Date = date;
             Description = description;
             UsersList = users;
         }
         public override string ToString()
         {
-            s
-            for(int i = 0;i<UsersList.Count; i++)
-            {
-
-            }
-            return $"Action [Date: {Date}, Description: {Description}, Key: {key}, Users: {users}, Birthday boy: {man.login}]";
+            return $"Action [Date: {Date}, Description: {Description}, Key: {key}, Users: {UsersList}, Birthday boy: {man.login}]";
         }
     }
 }
