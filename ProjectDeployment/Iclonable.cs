@@ -8,6 +8,6 @@ namespace ProjectDeployment
 {
     public interface IClonable
     {
-        Action ActCopy(Action name);
+        Action ActCopy(Action toCopy);
     }
 }

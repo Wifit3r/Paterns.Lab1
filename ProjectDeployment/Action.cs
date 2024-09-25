@@ -31,11 +31,9 @@ namespace ProjectDeployment
             string users = string.Join(", ", UsersList.Select(user => user.login));
             return $"Action [Date: {Date}, Description: {Description}, Key: {key}, Users: {users}]";
         }
-         public Action ActCopy(Action toCopy)
+         public Action ActCopy(Action ToCopy)
         {
-            Action toReturn = new Action(this.Date, this.Description, this.UsersList);
-            toReturn.key = toCopy.key;
-            return toReturn;
+            return new Action(Date, Description, UsersList);
         }
     }
 }

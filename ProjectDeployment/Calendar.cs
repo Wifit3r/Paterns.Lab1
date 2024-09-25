@@ -34,8 +34,8 @@ namespace ProjectDeployment
         }
         public Action copyAction(Action toCopy)
         {
-            Action act = toCopy;
-            act.ActCopy(toCopy);
+            Action act;
+            act = toCopy.ActCopy(toCopy);
             return act;
         }
         public Meet copyAction(Meet toCopy)

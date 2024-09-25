@@ -16,10 +16,13 @@ namespace ProjectDeployment
             user1.SetPassword("password11");
             user2.SetPassword("password22");
             user3.SetPassword("password33");
+
+
             List<User> users = new List<User>();
             users.Add(user1);
             users.Add(user3);
             users.Add(user2);
+           
             List<User> Busers = new List<User>();
             Busers.Add(user2);
             Busers.Add(user3);
@@ -41,6 +44,12 @@ namespace ProjectDeployment
             actionCopy.Description = "Description new";
             Console.WriteLine(actionCopy);
             Console.WriteLine(bd);
+            Action newAct = new Action("24.09.2024", "some desc", users);
+            var NewActionCopy = MyCalendar.copyAction(newAct);
+            NewActionCopy.Description = "NEW desc";
+            Console.WriteLine(newAct);
+            
+            Console.WriteLine(NewActionCopy);
         }
     }
 }
